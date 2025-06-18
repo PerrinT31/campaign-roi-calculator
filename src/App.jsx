@@ -1,6 +1,3 @@
-export default function App() {
-  // …
-}
 // src/App.jsx
 
 import React, { useState, useEffect } from "react";
@@ -64,14 +61,17 @@ export default function App() {
 
   return (
     <div className="app-container">
+      {/* Logo */}
       <img
         src="/SPASSO_LOGO_PRINCIPAL.png"
         alt="Spasso logo"
         className="app-logo"
       />
 
+      {/* Titre */}
       <h1 className="app-title">📦 Stock Checker</h1>
 
+      {/* Sélecteurs */}
       <div className="selectors">
         <select
           value={selectedRef}
@@ -95,10 +95,12 @@ export default function App() {
         </select>
       </div>
 
+      {/* Visuel */}
       <div className="hero-image">
         <img src="/collection-lin.jpg" alt="Collection LIN" />
       </div>
 
+      {/* Tableau */}
       {sizes.length > 0 && (
         <table className="results-table">
           <thead>
