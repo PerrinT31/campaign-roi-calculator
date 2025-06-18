@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite",          // lance le serveur de dev
+    "build": "vite build",  // génère la version de prod
+    "preview": "vite preview"// prévisualisation locale du build
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.2.0",     // React
+    "react-dom": "^18.2.0"  // React DOM
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.0.0"
+    "vite": "^5.0.0",              // Vite
+    "@vitejs/plugin-react": "^4.0.0" // plugin React pour Vite
   }
 }
