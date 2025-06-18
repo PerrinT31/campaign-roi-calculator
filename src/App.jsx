@@ -1,77 +1,74 @@
 // src/App.jsx
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import {
   getUniqueRefs,
   getColorsFor,
   getSizesFor,
   getStock
-} from "./stockCsvApi"
-import "./index.css"
+} from "./stockCsvApi";
+import "./index.css";
 
 export default function App() {
-  const [refs, setRefs]             = useState([])
-  const [colors, setColors]         = useState([])
-  const [sizes, setSizes]           = useState([])
-  const [selectedRef, setRef]       = useState("")
-  const [selectedColor, setColor]   = useState("")
-  const [stockBySize, setStockBySize] = useState({})
+  const [refs, setRefs]             = useState([]);
+  const [colors, setColors]         = useState([]);
+  const [sizes, setSizes]           = useState([]);
+  const [selectedRef, setRef]       = useState("");
+  const [selectedColor, setColor]   = useState("");
+  const [stockBySize, setStockBySize] = useState({});
 
-  // 1. Charger les références au démarrage
+  // 1. load references
   useEffect(() => {
-    getUniqueRefs().then(setRefs)
-  }, [])
+    getUniqueRefs().then(setRefs);
+  }, []);
 
-  // 2. À la sélection d’une référence, charger les couleurs
+  // 2. when reference changes, load colors
   useEffect(() => {
     if (!selectedRef) {
-      setColors([]); setColor("")
-      setSizes([]); setStockBySize({})
-      return
+      setColors([]); setColor("");
+      setSizes([]); setStockBySize({});
+      return;
     }
     getColorsFor(selectedRef).then(cols => {
-      setColors(cols)
-      setColor("")
-      setSizes([]); setStockBySize({})
-    })
-  }, [selectedRef])
+      setColors(cols);
+      setColor("");
+      setSizes([]); setStockBySize({});
+    });
+  }, [selectedRef]);
 
-  // 3. À la sélection d’une couleur, charger les tailles + stocks
+  // 3. when color changes, load sizes + stocks
   useEffect(() => {
     if (!selectedColor) {
-      setSizes([]); setStockBySize({})
-      return
+      setSizes([]); setStockBySize({});
+      return;
     }
     getSizesFor(selectedRef, selectedColor).then(szs => {
-      setSizes(szs)
+      setSizes(szs);
       Promise.all(
         szs.map(size =>
           getStock(selectedRef, selectedColor, size)
             .then(stock => ({ size, stock }))
         )
       ).then(results => {
-        const map = {}
+        const map = {};
         results.forEach(({ size, stock }) => {
-          map[size] = stock
-        })
-        setStockBySize(map)
-      })
-    })
-  }, [selectedColor, selectedRef])
+          map[size] = stock;
+        });
+        setStockBySize(map);
+      });
+    });
+  }, [selectedColor, selectedRef]);
 
   return (
     <div className="app-container">
-      {/* Logo */}
       <img
         src="/SPASSO_LOGO_PRINCIPAL.png"
         alt="Spasso logo"
         className="app-logo"
       />
 
-      {/* Titre */}
       <h1 className="app-title">📦 Stock Checker</h1>
 
-      {/* Sélecteurs */}
       <div className="selectors">
         <select
           value={selectedRef}
@@ -95,15 +92,10 @@ export default function App() {
         </select>
       </div>
 
-      {/* Visuel */}
       <div className="hero-image">
-        <img
-          src="/collection-lin.jpg"
-          alt="Collection LIN"
-        />
+        <img src="/collection-lin.jpg" alt="Collection LIN" />
       </div>
 
-      {/* Tableau */}
       {sizes.length > 0 && (
         <table className="results-table">
           <thead>
@@ -117,9 +109,7 @@ export default function App() {
               <tr key={size}>
                 <td>{size}</td>
                 <td style={{ textAlign: "right" }}>
-                  {stockBySize[size] > 0
-                    ? stockBySize[size]
-                    : "Out of stock"}
+                  {stockBySize[size] > 0 ? stockBySize[size] : "Out of stock"}
                 </td>
               </tr>
             ))}
@@ -127,5 +117,5 @@ export default function App() {
         </table>
       )}
     </div>
-)
+  );
 }
