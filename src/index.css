@@ -1,65 +1,62 @@
-/* index.css */
+/* src/index.css */
 
 body.app-root {
   margin: 0;
   padding: 0;
-  background-color: #c6bfb2;
+  background: #fff;
   font-family: "Jost", sans-serif;
 }
 
 .app-container {
-  max-width: 480px;
+  max-width: 600px;
   margin: 2rem auto;
   padding: 1rem;
   text-align: center;
 }
 
-.app-logo {
-  width: 200px;
+.app-title {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  font-size: 36pt;
   margin-bottom: 1.5rem;
 }
 
-.app-title {
-  margin: 0;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 700;
-  font-size: 50pt;
-  color: #000;
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.selectors select {
-  width: 50%;
-  margin: 0.5rem auto;
+.form-group label {
   display: block;
-  font-family: "Jost", sans-serif;
-  font-weight: 700;
+  font-size: 16pt;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
   font-size: 18pt;
-  padding: 0.25rem;
-  border: 1px solid #888;
+  font-weight: 700;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  background: #fff;
-  color: #000;
-  text-align: center;
 }
 
-.hero-image img {
-  width: 100%;
-  border-radius: 8px;
+.btn-calculate {
   margin-top: 1.5rem;
-}
-
-.results-table {
-  width: 100%;
-  margin-top: 1.5rem;
-  border-collapse: collapse;
-  background: #fff;
-  color: #000;
+  padding: 0.75rem 1.5rem;
+  font-size: 18pt;
+  font-weight: 700;
+  background-color: #005A9C;
+  color: #fff;
+  border: none;
   border-radius: 4px;
-  overflow: hidden;
+  cursor: pointer;
 }
 
-.results-table th,
-.results-table td {
-  padding: 8px;
-  border-bottom: 1px solid #ccc;
+.results {
+  margin-top: 2rem;
+  font-size: 18pt;
+  line-height: 1.5;
+  text-align: left;
 }
