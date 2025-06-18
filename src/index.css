@@ -1,46 +1,48 @@
-/* Racine et fonts */
+/* src/index.css */
+
+/* Corps de page */
 body.app-root {
   margin: 0;
   padding: 0;
-  background: #ffffff;
-  font-family: "Jost", sans-serif;
+  background: #ffffff;           /* fond blanc */
+  font-family: "Jost", sans-serif; /* police par défaut */
 }
 
 /* Titre principal */
 h2 {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
-  font-size: 36pt;
+  font-size: 36pt;               /* taille 36 points */
   text-align: center;
   margin: 2rem 0 1rem;
 }
 
-/* Inputs */
+/* Champs input */
 input {
   width: 100%;
   font-family: "Jost", sans-serif;
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 18pt;               /* taille 18 points */
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Bouton */
+/* Bouton de calcul */
 button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   font-family: "Jost", sans-serif;
   font-weight: 700;
   font-size: 18pt;
-  background-color: #005A9C;
+  background-color: #005A9C;     /* bleu B2B */
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-/* Résultats */
+/* Résultats affichés */
 .result {
   margin-top: 2rem;
   font-size: 18pt;
