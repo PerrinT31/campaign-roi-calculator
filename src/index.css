@@ -1,48 +1,50 @@
 /* src/index.css */
 
-/* Corps de page */
+/* 1. Style de base et fond */
 body.app-root {
   margin: 0;
   padding: 0;
-  background: #ffffff;           /* fond blanc */
-  font-family: "Jost", sans-serif; /* police par défaut */
+  background: #ffffff;            /* fond blanc */
+  font-family: "Jost", sans-serif;/* police par défaut */
 }
 
-/* Titre principal */
+/* 2. Titre principal */
 h2 {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
-  font-size: 36pt;               /* taille 36 points */
+  font-size: 36pt;                /* 36 points */
   text-align: center;
   margin: 2rem 0 1rem;
 }
 
-/* Champs input */
+/* 3. Champs de saisie */
 input {
   width: 100%;
   font-family: "Jost", sans-serif;
   font-weight: 700;
-  font-size: 18pt;               /* taille 18 points */
+  font-size: 18pt;                /* 18 points */
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
-/* Bouton de calcul */
+/* 4. Bouton */
 button {
-  margin-top: 1.5rem;
+  display: block;
+  margin: 1.5rem auto 0;
   padding: 0.75rem 1.5rem;
   font-family: "Jost", sans-serif;
   font-weight: 700;
   font-size: 18pt;
-  background-color: #005A9C;     /* bleu B2B */
+  background-color: #005A9C;      /* bleu B2B */
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-/* Résultats affichés */
+/* 5. Zone de résultats */
 .result {
   margin-top: 2rem;
   font-size: 18pt;
