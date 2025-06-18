@@ -1,52 +1,38 @@
-/* src/index.css */
-
+/* Racine et fonts */
 body.app-root {
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #ffffff;
   font-family: "Jost", sans-serif;
 }
 
-.app-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-.app-title {
+/* Titre principal */
+h2 {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
   font-size: 36pt;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin: 2rem 0 1rem;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.form-group label {
-  display: block;
-  font-size: 16pt;
-  margin-bottom: 0.5rem;
-}
-
-.form-group input {
+/* Inputs */
+input {
   width: 100%;
-  font-size: 18pt;
+  font-family: "Jost", sans-serif;
   font-weight: 700;
+  font-size: 18pt;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.btn-calculate {
+/* Bouton */
+button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  font-size: 18pt;
+  font-family: "Jost", sans-serif;
   font-weight: 700;
+  font-size: 18pt;
   background-color: #005A9C;
   color: #fff;
   border: none;
@@ -54,9 +40,9 @@ body.app-root {
   cursor: pointer;
 }
 
-.results {
+/* Résultats */
+.result {
   margin-top: 2rem;
   font-size: 18pt;
-  line-height: 1.5;
-  text-align: left;
+  line-height: 1.4;
 }
